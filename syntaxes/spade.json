@@ -1,0 +1,164 @@
+{
+    "scopeName": "source.spade",
+    "name": "SPADE",
+    "fileTypes": ["spade", "pa"],
+
+    "patterns": [
+        {
+            "include": "#comments"
+        },
+        {
+            "include": "#strings"
+        },
+        {
+            "include": "#sentences"
+        },
+        {
+            "include": "#keywords"
+        },
+        {
+            "include": "#constants"
+        },
+        {
+            "include": "#functions"
+        },
+        {
+            "include": "#types"
+        }
+    ],
+
+    "repository": {
+        "comments": {
+            "patterns": [
+                {
+                    "begin": "/\\*",
+                    "end": "\\*/",
+                    "name": "comment.block.spade"
+                },
+                {
+                    "begin": "//",
+                    "end": "\\n",
+                    "name": "comment.line.spade"
+                }
+            ]
+        },
+        "strings": {
+            "patterns": [
+                {
+                    "begin": "(')",
+                    "end": "(')",
+                    "beginCaptures": {
+                        "1": { "name": "string.quoted.single.spade" }
+                    },
+                    "endCaptures": {
+                        "1": { "name": "string.quoted.single.spade" }
+                    },
+                    "patterns": [
+                        { "include": "#placeholders" },
+                        {
+                            "match": "\\\\.",
+                            "name": "constant.character.escape.spade"
+                        },
+                        {
+                            "match": "[^{'\\\\]*",
+                            "name": "string.quoted.single.spade"
+                        }
+                    ]
+                }
+            ]
+        },
+        "sentences": {
+            "patterns": [
+                {
+                    "begin": "(\")",
+                    "end": "(\")",
+                    "beginCaptures": {
+                        "1": { "name": "entity.name.section.spade" }
+                    },
+                    "endCaptures": {
+                        "1": { "name": "entity.name.section.spade" }
+                    },
+                    "patterns": [
+                        { "include": "#placeholders" },
+                        {
+                            "match": "\\\\.",
+                            "name": "constant.character.escape.spade"
+                        },
+                        {
+                            "match": "[^{\"\\\\]*",
+                            "name": "entity.name.section.spade"
+                        }
+                    ],
+                    "comment": "entity.other.attribute-name.spade entity.name.section.spade"
+                }
+            ]
+        },
+        "placeholders": {
+            "patterns": [
+                {
+                    "begin": "{",
+                    "end": "}",
+                    "patterns": [
+                        { "include": "$self" }
+                    ]
+                }
+            ]
+        },
+        "keywords": {
+            "patterns": [
+                {
+                    "match": "\\b(Process|with subject|description|key)\\b",
+                    "name": "keyword.other.spade"
+                },
+                {
+                    "match": "\\b(The following)\\b",
+                    "name": "keyword.control.spade"
+                },
+                {
+                    "match": "\\b(and|or|not|old|exists)\\b",
+                    "name": "keyword.operator.spade"
+                },
+                {
+                    "match": "\\b(if|then|else)\\b",
+                    "name": "keyword.control.spade"
+                },
+                {
+                    "match": "\\b(input|from|labeled|based on|chosen from)\\b",
+                    "name": "keyword.control.spade"
+                },
+                {
+                    "match": "\\b(For|One|Several|the|each|exist|exists|in|applies|with)\\b",
+                    "name": "keyword.control.spade"
+                }
+            ]
+        },
+        "constants": {
+            "patterns": [
+                {
+                    "match": "\\b(([0-9]+\\.?[0-9]*)|(\\.[0-9]+))\\b",
+                    "name": "constant.numeric.spade"
+                },
+                {
+                    "match": "\\b(true|false|emtpy)\\b",
+                    "name": "constant.language.spade"
+                }
+            ]
+        },
+        "functions": {
+            "patterns": [
+                {
+                    "match": "\\b(one|first|count|sum|integer|decimal|sorted|currentDate)(\\()\\b",
+                    "name": "entity.name.function.spade"
+                }
+            ]
+        },
+        "types": {
+            "patterns": [
+                {
+                    "match": "\\b(boolean|integer|decimal|float|text|date|time|timestamp|binary|any)\\b",
+                    "name": "entity.name.type.spade"
+                }
+            ]
+        }
+    }
+}
