@@ -5,6 +5,7 @@
     "version": "0.0.0",
     "publisher": "marcus-nl",
     "homepage": "https://github.com/marcus-nl/vscode-spade",
+    "license": "GPLv3",
     "repository": {
         "type": "git",
         "url": "https://github.com/marcus-nl/vscode-spade.git"
