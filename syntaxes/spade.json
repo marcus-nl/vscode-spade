@@ -73,10 +73,10 @@
                     "begin": "(\")",
                     "end": "(\")",
                     "beginCaptures": {
-                        "1": { "name": "entity.name.section.spade" }
+                        "1": { "name": "entity.other.attribute-name.spade" }
                     },
                     "endCaptures": {
-                        "1": { "name": "entity.name.section.spade" }
+                        "1": { "name": "entity.other.attribute-name.spade" }
                     },
                     "patterns": [
                         { "include": "#placeholders" },
@@ -86,7 +86,7 @@
                         },
                         {
                             "match": "[^{\"\\\\]*",
-                            "name": "entity.name.section.spade"
+                            "name": "entity.other.attribute-name.spade"
                         }
                     ],
                     "comment": "entity.other.attribute-name.spade entity.name.section.spade"

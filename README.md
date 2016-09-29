@@ -1,6 +1,6 @@
 # vscode-spade README
 
-This is the README for your extension "vscode-spade". After writing up a brief description, we recommend including the following sections.
+Support for the SPADE L4 specification language
 
 ## Features
 
@@ -24,3 +24,6 @@ This is the README for your extension "vscode-spade". After writing up a brief d
 
 Initial release of vscode-spade.
 
+### 0.1.0
+
+Automatically start the language server, using a batch file.

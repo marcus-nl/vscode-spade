@@ -40,43 +40,46 @@ export function activate(context: vscode.ExtensionContext) {
             ]
         }
     }
+
     function createServer(): Promise<StreamInfo> {
         let javaExecutablePath = "java";
         return new Promise((resolve, reject) => {
-            let socket = Net.connect(12345);
-            resolve({
-                reader: socket,
-                writer: socket
-            });
-            /*
-            PortFinder.getPort((err, port) => {
-                port = 12345;
-                let fatJar = Path.resolve(context.extensionPath, "out", "stcs.jar");
-                
-                let args = [
-                    '-Dstcs.port=' + port,
-                    '-jar', fatJar
-                ];
-                
-                console.log(javaExecutablePath + ' ' + args.join(' '));
-                
-                Net.createServer(socket => {
-                    console.log('Child process connected on port ' + port);
-
-                    resolve({
-                        reader: socket,
-                        writer: socket
-                    });
-                }).listen(port, () => {
-                    let options = { stdio: 'inherit', cwd: vscode.workspace.rootPath };
-                    console.log('Child process connecting on port ' + port);
-                    
-                    // Start the child java process
-                    ChildProcess.execFile(javaExecutablePath, args, options);
+            let debug = false;
+            if (debug) {
+                let socket = Net.connect(12345);
+                resolve({ reader: socket, writer: socket });
+            }
+            else {
+                PortFinder.getPort((err, port) => {
+                    let socket = startServer(port);          
+                    resolve({ reader: socket, writer: socket });
                 });
-            });
-            */
+            }
         });
+    }
+    
+    function startServer(port: number) {
+        let batPath = Path.resolve(context.extensionPath, "PaGenServer.bat");
+        let args = [ '' + port ];                              
+        
+        // Start the child java process
+        console.log('Running ' + batPath + ' ' + args.join(' '));
+        let child = ChildProcess.spawn(batPath, [ '' + port ], { shell: true, cwd: vscode.workspace.rootPath });
+
+        child.stdout.on('data', (data) => {
+            console.log('>' + data);
+        });
+        child.stderr.on('data', (data) => {
+            console.error('!' + data);
+        });
+        child.on('error', (err) => {
+            console.log('Failed to start child process: ' + err);
+        });
+        child.on('exit', (code) => {
+            console.log(`Child exited with code ${code}`);
+        });
+
+        return Net.connect(port);
     }
 
     let client = new LanguageClient('SPADE Language Server', createServer, clientOptions);

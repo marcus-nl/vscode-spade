@@ -2,7 +2,7 @@
     "name": "vscode-spade",
     "displayName": "SPADE Language Support",
     "description": "Support for the SPADE L4 specification language",
-    "version": "0.0.1",
+    "version": "0.1.0",
     "publisher": "marcus-nl",
     "homepage": "https://github.com/marcus-nl/vscode-spade",
     "license": "GPL-3.0",
@@ -16,31 +16,36 @@
     "categories": [
         "Languages"
     ],
-	"keywords": [
-		"spade"
-	],
+    "keywords": [
+        "spade"
+    ],
     "activationEvents": [
         "onLanguage:spade"
     ],
     "main": "./out/src/extension",
+    "files": [
+        "PaGenServer.bat"
+    ],
     "contributes": {
-		"languages": [
-			{
-				"id": "spade",
-				"extensions": [
-					".spade",
+        "languages": [
+            {
+                "id": "spade",
+                "extensions": [
+                    ".spade",
                     ".pa"
-				],
-				"aliases": [
-					"SPADE"
-				]
-			}
-		],
-        "grammars": [{
-            "language": "spade",
-            "scopeName": "source.spade",
-            "path": "./syntaxes/spade.json"
-        }]
+                ],
+                "aliases": [
+                    "SPADE"
+                ]
+            }
+        ],
+        "grammars": [
+            {
+                "language": "spade",
+                "scopeName": "source.spade",
+                "path": "./syntaxes/spade.json"
+            }
+        ]
     },
     "scripts": {
         "vscode:prepublish": "node ./node_modules/vscode/bin/compile",
@@ -48,8 +53,8 @@
         "postinstall": "node ./node_modules/vscode/bin/install"
     },
     "dependencies": {
-        "portfinder": "^0.4.0",
-        "vscode-languageclient": "^2.2.1"
+        "portfinder": "^1.0.0",
+        "vscode-languageclient": "^2.5.0"
     },
     "devDependencies": {
         "typescript": "^1.8.5",
