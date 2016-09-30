@@ -1,0 +1,30 @@
+{
+    "scopeName": "logging",
+    "name": "Logging",
+    "fileTypes": ["log"],
+
+    "patterns": [
+        {
+            "include": "#levels"
+        }
+    ],
+
+    "repository": {
+        "levels": {
+            "patterns": [
+                {
+                    "match": "INFO|Info",
+                    "name": "info-token"
+                },
+                {
+                    "match": "WARN(NG)?|Warn(ing)?",
+                    "name": "warn-token"
+                },
+                {
+                    "match": "ERROR|Error",
+                    "name": "error-token"
+                }
+            ]
+        }
+    }
+}
