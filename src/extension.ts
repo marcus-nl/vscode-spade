@@ -50,6 +50,7 @@ export function activate(context: vscode.ExtensionContext) {
                 resolve({ reader: socket, writer: socket });
             }
             else {
+                PortFinder.basePort = 9542;
                 PortFinder.getPort((err, port) => {
                     let socket = startServer(port);          
                     resolve({ reader: socket, writer: socket });
