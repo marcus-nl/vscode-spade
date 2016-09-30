@@ -45,7 +45,14 @@
                 "scopeName": "source.spade",
                 "path": "./syntaxes/spade.json"
             }
-        ]
+        ],
+		"themes": [
+			{
+				"label": "SPADE Light",
+				"uiTheme": "vs",
+				"path": "./themes/spade_light.json"
+			}
+		]
     },
     "scripts": {
         "vscode:prepublish": "node ./node_modules/vscode/bin/compile",
