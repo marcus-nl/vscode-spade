@@ -23,9 +23,6 @@
         "onLanguage:spade"
     ],
     "main": "./out/src/extension",
-    "files": [
-        "PaGenServer.bat"
-    ],
     "contributes": {
         "languages": [
             {
