@@ -26,7 +26,8 @@
 				"entity.name.method"
 			],
 			"settings": {
-				"foreground": "#795E26"
+				"foreground": "#9d071d",
+				"fontStyle": "bold"
 			}
 		},
 		{
@@ -54,7 +55,6 @@
 				"foreground": "#0451a5"
 			}
 		},
-		// === from light_vs.json ===
 		{
 			"scope": "emphasis",
 			"settings": {
@@ -85,7 +85,7 @@
 		{
 			"scope": "constant.language",
 			"settings": {
-				"foreground": "#0000ff"
+				"foreground": "#2222ff"
 			}
 		},
 		{
@@ -223,7 +223,7 @@
 		{
 			"scope": "meta.preprocessor",
 			"settings": {
-				"foreground": "#0000ff"
+				"foreground": "#2222ff"
 			}
 		},
 		{
@@ -247,19 +247,19 @@
 		{
 			"scope": "storage",
 			"settings": {
-				"foreground": "#0000ff"
+				"foreground": "#2222ff"
 			}
 		},
 		{
 			"scope": "storage.type",
 			"settings": {
-				"foreground": "#0000ff"
+				"foreground": "#2222ff"
 			}
 		},
 		{
 			"scope": "storage.modifier",
 			"settings": {
-				"foreground": "#0000ff"
+				"foreground": "#2222ff"
 			}
 		},
 		{
@@ -271,7 +271,7 @@
 		{
 			"scope": ["string.xml", "string.jade", "string.yaml", "string.html"],
 			"settings": {
-				"foreground": "#0000ff"
+				"foreground": "#2222ff"
 			}
 		},
 		{
@@ -301,14 +301,14 @@
 		{
 			"scope": "keyword",
 			"settings": {
-				"foreground": "#0000ff",
+				"foreground": "#2222ff",
 				"fontStyle": "bold"
 			}
 		},
 		{
 			"scope": "keyword.control",
 			"settings": {
-				"foreground": "#0000ff",
+				"foreground": "#2222ff",
 				"fontStyle": "bold"
 			}
 		},
@@ -322,7 +322,7 @@
 		{
 			"scope": "keyword.operator.new",
 			"settings": {
-				"foreground": "#0000ff",
+				"foreground": "#2222ff",
 				"fontStyle": "bold"
 			}
 		},

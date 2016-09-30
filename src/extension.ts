@@ -41,7 +41,7 @@ export function activate(context: vscode.ExtensionContext) {
         }
     }
 
-    function createServer(): Promise<StreamInfo> {
+    function connectToServer(): Promise<StreamInfo> {
         let javaExecutablePath = "java";
         return new Promise((resolve, reject) => {
             let debug = false;
@@ -58,19 +58,16 @@ export function activate(context: vscode.ExtensionContext) {
         });
     }
     
-    function startServer(port: number) {
-        let batPath = Path.resolve(context.extensionPath, "PaGenServer.bat");
-        let args = [ '' + port ];                              
-        
-        // Start the child java process
-        console.log('Running ' + batPath + ' ' + args.join(' '));
-        let child = ChildProcess.spawn(batPath, [ '' + port ], { shell: true, cwd: vscode.workspace.rootPath });
+    function startServer(port: number): Net.Socket {
+        let jarFile = process.env["PAGEN_SERVER_JAR"];
+        let args = [ '-Dstcs.port=' + port, '-jar', jarFile ];
 
+        let child = ChildProcess.execFile('java', args, { cwd: vscode.workspace.rootPath });
         child.stdout.on('data', (data) => {
-            console.log('>' + data);
+            console.log('' + data);
         });
         child.stderr.on('data', (data) => {
-            console.error('!' + data);
+            console.error('' + data);
         });
         child.on('error', (err) => {
             console.log('Failed to start child process: ' + err);
@@ -82,8 +79,10 @@ export function activate(context: vscode.ExtensionContext) {
         return Net.connect(port);
     }
 
-    let client = new LanguageClient('SPADE Language Server', createServer, clientOptions);
+
+    let client = new LanguageClient('SPADE Language Server', connectToServer, clientOptions);
     let disposable = client.start();
+    client.info("SPADE language support plugin started");
 
     context.subscriptions.push(disposable);
 }

@@ -2,7 +2,7 @@
     "name": "vscode-spade",
     "displayName": "SPADE Language Support",
     "description": "Support for the SPADE L4 specification language",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "publisher": "marcus-nl",
     "homepage": "https://github.com/marcus-nl/vscode-spade",
     "license": "GPL-3.0",
@@ -11,7 +11,7 @@
         "url": "https://github.com/marcus-nl/vscode-spade.git"
     },
     "engines": {
-        "vscode": "^1.0.0"
+        "vscode": "^1.5.0"
     },
     "categories": [
         "Languages"
@@ -64,7 +64,7 @@
         "vscode-languageclient": "^2.5.0"
     },
     "devDependencies": {
-        "typescript": "^1.8.5",
-        "vscode": "^0.11.0"
+		"typescript": "^1.8.9",
+		"vscode": "^0.11.0"
     }
 }

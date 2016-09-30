@@ -147,7 +147,7 @@
         "functions": {
             "patterns": [
                 {
-                    "match": "\\b(one|first|count|sum|integer|decimal|sorted|currentDate)(\\()\\b",
+                    "match": "\\b(addWorkDays|asMillis|capitalize|concat|count|countDays|currentDate|currentDateTime|date|datePart|day|month|year|years|decimal|e|findInText|first|format|get|getCollection|getInitiator|getInstanceId|integer|length|one|period|pi|replace|round|roundDown|separatedBy|sorted|split|stringFromInteger|substring|sum|time|timePart|timestamp|toDays|tohtml|toUpperCase|uniqueId)(\\()\\b",
                     "name": "entity.name.function.spade"
                 }
             ]
