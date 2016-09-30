@@ -107,6 +107,14 @@
         "keywords": {
             "patterns": [
                 {
+                    "match": "\\b(For|One|Several|the|each|exists|exist|in|applies|with)\\b",
+                    "name": "keyword.control.spade"
+                },
+                {
+                    "match": "\\b(and|or|not|old|exists)\\b",
+                    "name": "keyword.operator.spade"
+                },
+                {
                     "match": "\\b(Process|with subject|description|key)\\b",
                     "name": "keyword.other.spade"
                 },
@@ -115,19 +123,11 @@
                     "name": "keyword.control.spade"
                 },
                 {
-                    "match": "\\b(and|or|not|old|exists)\\b",
-                    "name": "keyword.operator.spade"
-                },
-                {
                     "match": "\\b(if|then|else)\\b",
                     "name": "keyword.control.spade"
                 },
                 {
                     "match": "\\b(input|from|labeled|based on|chosen from)\\b",
-                    "name": "keyword.control.spade"
-                },
-                {
-                    "match": "\\b(For|One|Several|the|each|exist|exists|in|applies|with)\\b",
                     "name": "keyword.control.spade"
                 }
             ]

@@ -2,14 +2,6 @@
 	"name": "SPADE Light",
 	"settings": [
 		{
-			"scope": "entity.other.attribute-name.spade",
-			"settings": {
-				"foreground": "#008800",
-				"fontStyle": "underline"
-			}
-		},
-		// === from light_plus.json ===
-		{
 			"name": "Types declaration and references",
 			"scope": [
 				"meta.type.name",
@@ -85,7 +77,8 @@
 		{
 			"scope": "comment",
 			"settings": {
-				"foreground": "#008000"
+				"foreground": "#9f9485",
+				"fontStyle": "italic"
 			}
 		},
 
@@ -130,6 +123,13 @@
 			"scope": "entity.other.attribute-name",
 			"settings": {
 				"foreground": "#ff0000"
+			}
+		},
+		{
+			"scope": "entity.other.attribute-name.spade",
+			"settings": {
+				"foreground": "#008800",
+				"fontStyle": "bold underline"
 			}
 		},
 		{
@@ -265,7 +265,7 @@
 		{
 			"scope": "string",
 			"settings": {
-				"foreground": "#a31515"
+				"foreground": "#e58a08"
 			}
 		},
 		{
@@ -301,25 +301,29 @@
 		{
 			"scope": "keyword",
 			"settings": {
-				"foreground": "#0000ff"
+				"foreground": "#0000ff",
+				"fontStyle": "bold"
 			}
 		},
 		{
 			"scope": "keyword.control",
 			"settings": {
-				"foreground": "#0000ff"
+				"foreground": "#0000ff",
+				"fontStyle": "bold"
 			}
 		},
 		{
 			"scope": "keyword.operator",
 			"settings": {
-				"foreground": "#000000"
+				"foreground": "#6d0bd0",
+				"fontStyle": "bold"
 			}
 		},
 		{
 			"scope": "keyword.operator.new",
 			"settings": {
-				"foreground": "#0000ff"
+				"foreground": "#0000ff",
+				"fontStyle": "bold"
 			}
 		},
 		{
