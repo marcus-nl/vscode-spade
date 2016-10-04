@@ -13,16 +13,20 @@
         "levels": {
             "patterns": [
                 {
+                    "match": ".*SUCCESS.*",
+                    "name": "log.happyresult"
+                },
+                {
                     "match": "INFO|Info",
-                    "name": "info-token"
+                    "name": "log.info"
                 },
                 {
-                    "match": "WARN(NG)?|Warn(ing)?",
-                    "name": "warn-token"
+                    "match": ".*WARN.*",
+                    "name": "log.warn"
                 },
                 {
-                    "match": "ERROR|Error",
-                    "name": "error-token"
+                    "match": ".*ERROR.*|.*FAILURE.*|.*caused by.*|.*Caused by.*",
+                    "name": "log.error"
                 }
             ]
         }

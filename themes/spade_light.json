@@ -2,6 +2,30 @@
 	"name": "SPADE Light",
 	"settings": [
 		{
+			"name": "Log happy result",
+			"scope": "log.happyresult",
+			"settings": {
+				"foreground": "#00FF00",
+				"fontStyle": "bold underline"
+			}
+		},
+		{
+			"name": "Log warn",
+			"scope": "log.warn",
+			"settings": {
+				"foreground": "#ffc600",
+				"fontStyle": "bold underline"
+			}
+		},
+		{
+			"name": "Log error",
+			"scope": "log.error",
+			"settings": {
+				"foreground": "#FF0000",
+				"fontStyle": "bold underline"
+			}
+		},
+		{
 			"name": "Types declaration and references",
 			"scope": [
 				"meta.type.name",
