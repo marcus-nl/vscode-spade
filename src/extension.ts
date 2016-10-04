@@ -52,14 +52,17 @@ export function activate(context: vscode.ExtensionContext) {
             else {
                 PortFinder.basePort = 9542;
                 PortFinder.getPort((err, port) => {
-                    let socket = startServer(port);          
-                    resolve({ reader: socket, writer: socket });
+                    startServer(port);
+                    let socket = Net.connect({ port }, () => {
+                        client.info("Connected to SPADE Language Server");
+                        resolve({ reader: socket, writer: socket });
+                    });
                 });
             }
         });
     }
     
-    function startServer(port: number): Net.Socket {
+    function startServer(port: number) {
         let jarFile = process.env["PAGEN_SERVER_JAR"];
         let args = [ '-Dstcs.port=' + port, '-jar', jarFile ];
 
@@ -76,14 +79,10 @@ export function activate(context: vscode.ExtensionContext) {
         child.on('exit', (code) => {
             console.log(`Child exited with code ${code}`);
         });
-
-        return Net.connect(port);
     }
-
 
     let client = new LanguageClient('SPADE Language Server', connectToServer, clientOptions);
     let disposable = client.start();
-    client.info("SPADE language support plugin started");
 
     context.subscriptions.push(disposable);
 }
