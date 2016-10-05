@@ -107,7 +107,7 @@
         "keywords": {
             "patterns": [
                 {
-                    "match": "\\b(For|One|Several|the|each|exists|exist|in|applies|with)\\b",
+                    "match": "\\b(For|One|Several|the|each|exists|exist|in|applies|with|numerous)\\b",
                     "name": "keyword.control.spade"
                 },
                 {

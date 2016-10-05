@@ -47,3 +47,7 @@ Start from port 9542 instead of 8000.
 ### 0.1.5
 
 Fix an issue with connecting to the language server at startup.
+
+### 0.1.6
+
+Add keywords and extend syntax highlighter.
