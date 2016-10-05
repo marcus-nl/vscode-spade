@@ -43,3 +43,7 @@ Add log output highlighting.
 ### 0.1.4
 
 Start from port 9542 instead of 8000.
+
+### 0.1.5
+
+Fix an issue with connecting to the language server at startup.

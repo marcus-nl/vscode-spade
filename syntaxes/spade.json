@@ -127,8 +127,12 @@
                     "name": "keyword.control.spade"
                 },
                 {
-                    "match": "\\b(input|from|labeled|based on|chosen from)\\b",
+                    "match": "\\b(input|from|labeled|based on|chosen from|default)\\b",
                     "name": "keyword.control.spade"
+                },
+                {
+                    "match": "\\b(identifies|unique|required|displayed|label|group|opposite of)\\b",
+                    "name": "keyword.other.spade"
                 }
             ]
         },
