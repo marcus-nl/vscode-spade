@@ -47,7 +47,7 @@
 					"text/x-code-output"
 				]
             }
-        ],
+		],
         "grammars": [
             {
                 "language": "spade",
@@ -60,13 +60,24 @@
                 "path": "./syntaxes/logging.json"
             }
         ],
-		"themes": [
-			{
-				"label": "SPADE Light",
-				"uiTheme": "vs",
-				"path": "./themes/spade_light.json"
-			}
-		]
+        "themes": [
+            {
+            "label": "SPADE Light",
+            "uiTheme": "vs",
+            "path": "./themes/spade_light.json"
+            }
+        ],
+        "keybindings": [
+            // {
+            //     "key": "ctrl+u",
+            //     "command": "extension.example",
+            //     "when": "editorTextFocus"
+            // },
+            {
+                "key": "ctrl+alt+r",
+                "command": "workbench.action.reloadWindow"
+            }
+        ]
     },
     "scripts": {
         "vscode:prepublish": "node ./node_modules/vscode/bin/compile",
