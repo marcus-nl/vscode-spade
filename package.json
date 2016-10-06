@@ -68,11 +68,6 @@
             }
         ],
         "keybindings": [
-            // {
-            //     "key": "ctrl+u",
-            //     "command": "extension.example",
-            //     "when": "editorTextFocus"
-            // },
             {
                 "key": "ctrl+alt+r",
                 "command": "workbench.action.reloadWindow"
