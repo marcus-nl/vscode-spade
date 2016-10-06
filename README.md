@@ -1,6 +1,6 @@
 # vscode-spade README
 
-Support for the SPADE L4 specification language
+Support for the SPADE L4 specification language.
 
 ## Features
 
@@ -8,7 +8,7 @@ Support for the SPADE L4 specification language
 
 ## Requirements
 
-...
+The environment variable "PAGEN\_SERVER\_JAR" must point to the SPADE Language Server JAR. The value must be the full path of the jar file, without quotes, and can contain spaces.
 
 ## Extension Settings
 
