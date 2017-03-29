@@ -54,7 +54,7 @@
 		"prefix": "for the",
 		"body": [
 			"For the ${1:element_name} in ${2:filtered_collection} applies:",
-			"${1:element_name}.{3:attribute_name}\t= ${4:value_expression}",
+			"${1:element_name}.${3:attribute_name}\t= ${4:value_expression}",
 			"\tand",
 			"$0"
 		],
