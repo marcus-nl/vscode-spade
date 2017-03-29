@@ -44,10 +44,10 @@
                     "Log"
                 ],
                 "mimetypes": [
-					"text/x-code-output"
-				]
+                    "text/x-code-output"
+                ]
             }
-		],
+        ],
         "grammars": [
             {
                 "language": "spade",
@@ -62,15 +62,25 @@
         ],
         "themes": [
             {
-            "label": "SPADE Light",
-            "uiTheme": "vs",
-            "path": "./themes/spade_light.json"
+                "label": "SPADE Light",
+                "uiTheme": "vs",
+                "path": "./themes/spade_light.json"
             }
         ],
         "keybindings": [
             {
                 "key": "ctrl+alt+r",
                 "command": "workbench.action.reloadWindow"
+            },
+            {
+                "key": "ctrl+shift+alt+s",
+                "command": "editor.action.showSnippets"
+            }
+        ],
+        "snippets": [
+            {
+                "language": "spade",
+                "path": "./snippets/spade.json"
             }
         ]
     },
@@ -84,7 +94,7 @@
         "vscode-languageclient": "^2.5.0"
     },
     "devDependencies": {
-		"typescript": "^1.8.9",
-		"vscode": "^0.11.0"
+        "typescript": "^1.8.9",
+        "vscode": "^0.11.0"
     }
 }
