@@ -2,7 +2,7 @@
     "name": "vscode-spade",
     "displayName": "SPADE Language Support",
     "description": "Support for the SPADE L4 specification language",
-    "version": "0.1.5",
+    "version": "0.1.7",
     "publisher": "marcus-nl",
     "homepage": "https://github.com/marcus-nl/vscode-spade",
     "license": "GPL-3.0",
@@ -44,10 +44,10 @@
                     "Log"
                 ],
                 "mimetypes": [
-					"text/x-code-output"
-				]
+                    "text/x-code-output"
+                ]
             }
-		],
+        ],
         "grammars": [
             {
                 "language": "spade",
@@ -62,20 +62,25 @@
         ],
         "themes": [
             {
-            "label": "SPADE Light",
-            "uiTheme": "vs",
-            "path": "./themes/spade_light.json"
+                "label": "SPADE Light",
+                "uiTheme": "vs",
+                "path": "./themes/spade_light.json"
             }
         ],
         "keybindings": [
-            // {
-            //     "key": "ctrl+u",
-            //     "command": "extension.example",
-            //     "when": "editorTextFocus"
-            // },
             {
                 "key": "ctrl+alt+r",
                 "command": "workbench.action.reloadWindow"
+            },
+            {
+                "key": "ctrl+shift+alt+s",
+                "command": "editor.action.showSnippets"
+            }
+        ],
+        "snippets": [
+            {
+                "language": "spade",
+                "path": "./snippets/spade.json"
             }
         ]
     },
@@ -89,7 +94,7 @@
         "vscode-languageclient": "^2.5.0"
     },
     "devDependencies": {
-		"typescript": "^1.8.9",
-		"vscode": "^0.11.0"
+        "typescript": "^1.8.9",
+        "vscode": "^0.11.0"
     }
 }

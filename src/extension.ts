@@ -1,10 +1,11 @@
 'use strict';
 
-import * as vscode from 'vscode';
 import * as Path from 'path';
 import * as Net from 'net';
 import * as PortFinder from 'portfinder';
 import * as ChildProcess from 'child_process';
+import * as vscode from 'vscode';
+import {Logger} from 'vscode-jsonrpc';
 import {LanguageClient, LanguageClientOptions, SettingMonitor, ServerOptions, StreamInfo} from 'vscode-languageclient';
 
 // this method is called when your extension is activated
@@ -27,6 +28,8 @@ export function activate(context: vscode.ExtensionContext) {
             ['(', ')'],
         ],
     });
+
+    let logger: Logger = console; 
         
     let clientOptions: LanguageClientOptions = {
         // Register the server for spade documents
@@ -38,7 +41,11 @@ export function activate(context: vscode.ExtensionContext) {
             fileEvents: [
                 vscode.workspace.createFileSystemWatcher('**/*.spade')
             ]
-        }
+        },
+        // errorHandler: {
+        //     error: function(error: Error, message: Message, count: number): ErrorAction {},
+        //     closed: function(): CloseAction {},
+        // },
     }
 
     function connectToServer(): Promise<StreamInfo> {
@@ -54,7 +61,7 @@ export function activate(context: vscode.ExtensionContext) {
                 PortFinder.getPort((err, port) => {
                     startServer(port);
                     let socket = Net.connect({ port }, () => {
-                        client.info("Connected to SPADE Language Server");
+                        logger.info("Connected to SPADE Language Server");
                         resolve({ reader: socket, writer: socket });
                     });
                 });
@@ -68,20 +75,27 @@ export function activate(context: vscode.ExtensionContext) {
 
         let child = ChildProcess.execFile('java', args, { cwd: vscode.workspace.rootPath });
         child.stdout.on('data', (data) => {
-            console.log('' + data);
+            logger.info('' + data);
         });
         child.stderr.on('data', (data) => {
-            console.error('' + data);
+            logger.error('' + data);
         });
         child.on('error', (err) => {
-            console.log('Failed to start child process: ' + err);
+            logger.error('Failed to start child process: ' + err);
         });
         child.on('exit', (code) => {
-            console.log(`Child exited with code ${code}`);
+            logger.info(`Child exited with code ${code}`);
         });
     }
 
     let client = new LanguageClient('SPADE Language Server', connectToServer, clientOptions);
+    logger = {
+        error: function(message: string): void { client.error(message.trim()); },
+        warn: function(message: string): void { client.warn(message.trim());  },
+        info: function(message: string): void { client.info(message.trim()); },
+        log: function(message: string): void { client.info(message.trim()); },
+    };
+
     let disposable = client.start();
 
     context.subscriptions.push(disposable);

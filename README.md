@@ -39,3 +39,7 @@ Fix an issue with connecting to the language server at startup.
 ### 0.1.6
 
 Add keywords and extend syntax highlighter.
+
+### 0.1.7
+
+Improve logging.
