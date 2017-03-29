@@ -64,7 +64,7 @@
 		"prefix": "for each: LIST or results",
 		"body": [
 			"For each ${1:element_name} in ${2:numerous:numerous} :${3:filtered_collection} applies:",
-			"${1:element_name}.{4:attribute_name}\t= ${5:value_expression}",
+			"${1:element_name}.${4:attribute_name}\t= ${5:value_expression}",
 			"\tand",
 			"$0"
 		],
