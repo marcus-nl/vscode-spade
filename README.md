@@ -43,3 +43,7 @@ Add keywords and extend syntax highlighter.
 ### 0.1.7
 
 Improve logging.
+
+### 0.1.8
+
+Add snippets. Thanks to Edwin Hendriks! Use control+shift+alt+s to open and select snippets. 
