@@ -1,5 +1,3 @@
-'use strict';
-
 import * as Path from 'path';
 import * as Net from 'net';
 import * as PortFinder from 'portfinder';
@@ -70,8 +68,9 @@ export function activate(context: vscode.ExtensionContext) {
     
     function startServer(port: number) {
         let jarFile = process.env["PAGEN_SERVER_JAR"];
-        let args = [ '-Dstcs.port=' + port, '-jar', jarFile ];
+        let args = [ '-Dstcs.port=' + port, '-jar', unquote(jarFile) ];
 
+        logger.info("Starting Language Server: " + args);
         let child = ChildProcess.execFile('java', args, { cwd: vscode.workspace.rootPath });
         child.stdout.on('data', (data) => {
             logger.info('' + data);
@@ -90,9 +89,9 @@ export function activate(context: vscode.ExtensionContext) {
     let client = new LanguageClient('SPADE Language Server', connectToServer, clientOptions);
     logger = {
         error: function(message: string): void { client.error(message.trim()); },
-        warn: function(message: string): void { client.warn(message.trim());  },
-        info: function(message: string): void { client.info(message.trim()); },
-        log: function(message: string): void { client.info(message.trim()); },
+        warn:  function(message: string): void { client.warn(message.trim());  },
+        info:  function(message: string): void { client.info(message.trim());  },
+        log:   function(message: string): void { client.info(message.trim());  },
     };
 
     let disposable = client.start();
@@ -102,4 +101,12 @@ export function activate(context: vscode.ExtensionContext) {
 
 // this method is called when your extension is deactivated
 export function deactivate() {
+}
+
+function unquote(s: string): string {
+    if (!s) return s;
+    if (s.startsWith('"') && s.endsWith('"') || s.startsWith("'") && s.endsWith("'")) {
+        return s.substring(1, s.length - 1);
+    }
+    return s;
 }
