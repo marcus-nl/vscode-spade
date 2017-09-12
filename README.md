@@ -4,7 +4,7 @@ Support for the SPADE L4 specification language.
 
 ## Requirements
 
-The environment variable "PAGEN\_SERVER\_JAR" must point to the SPADE Language Server JAR. The value must be the full path of the jar file, without quotes, and can contain spaces.
+The environment variable "PAGEN\_SERVER\_JAR" must point to the SPADE Language Server JAR. The value must be the full path of the jar file, and can contain spaces.
 
 ## Release Notes
 
@@ -47,3 +47,7 @@ Improve logging.
 ### 0.1.8
 
 Add snippets. Thanks to Edwin Hendriks! Use control+shift+alt+s to open and select snippets. 
+
+### 0.1.9
+
+Update dependencies and allow quotes around the value of the "PAGEN\_SERVER\_JAR" environment variable.
