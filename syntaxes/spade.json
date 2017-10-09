@@ -139,7 +139,7 @@
         "constants": {
             "patterns": [
                 {
-                    "match": "\\b(([0-9]+\\.?[0-9]*)|(\\.[0-9]+))\\b",
+                    "match": "\\b(([0-9]+\\.?[0-9]*)|(\\.[0-9]+))f?\\b",
                     "name": "constant.numeric.spade"
                 },
                 {
@@ -151,7 +151,7 @@
         "functions": {
             "patterns": [
                 {
-                    "match": "\\b(addWorkDays|asMillis|capitalize|concat|count|countDays|currentDate|currentDateTime|date|datePart|day|month|year|years|decimal|e|findInText|first|format|get|getCollection|getInitiator|getInstanceId|integer|length|one|period|pi|replace|round|roundDown|separatedBy|sorted|split|stringFromInteger|substring|sum|time|timePart|timestamp|toDays|tohtml|toUpperCase|uniqueId)(\\()\\b",
+                    "match": "\\b(addWorkDays|asMillis|capitalize|concat|count|countDays|countNormalizedDays|currentDate|currentDateTime|date|datePart|day|month|year|years|decimal|findInText|first|format|get|getCollection|getInitiator|getInstanceId|integer|length|one|period|replace|round|roundDown|separatedBy|sorted|split|stringFromInteger|substring|sum|time|timePart|timestamp|toDays|tohtml|toUpperCase|uniqueId)(\\()\\b",
                     "name": "entity.name.function.spade"
                 }
             ]
