@@ -51,3 +51,7 @@ Add snippets. Thanks to Edwin Hendriks! Use control+shift+alt+s to open and sele
 ### 0.1.9
 
 Update dependencies and allow quotes around the value of the "PAGEN\_SERVER\_JAR" environment variable.
+
+### 0.2.0
+
+Improve parsing of floating-point literals.

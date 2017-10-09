@@ -57,6 +57,7 @@ export function activate(context: vscode.ExtensionContext) {
             else {
                 PortFinder.getPort({ port: 9542 }, (err, port) => {
                     startServer(port);
+                    logger.info(`Connecting to SPADE Language Server on port ${port}...`)
                     let socket = Net.connect({ port }, () => {
                         logger.info("Connected to SPADE Language Server");
                         resolve({ reader: socket, writer: socket });
