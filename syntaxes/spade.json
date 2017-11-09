@@ -131,6 +131,10 @@
                     "name": "keyword.control.spade"
                 },
                 {
+                    "match": "\\b(sorted by|ascending|descending)\\b",
+                    "name": "keyword.other.spade"
+                },
+                {
                     "match": "\\b(identifies|unique|required|displayed|label|group|opposite of)\\b",
                     "name": "keyword.other.spade"
                 }

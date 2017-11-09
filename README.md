@@ -2,6 +2,8 @@
 
 Support for the SPADE L4 specification language.
 
+To publish, see https://code.visualstudio.com/docs/extensions/publish-extension.
+
 ## Requirements
 
 The environment variable "PAGEN\_SERVER\_JAR" must point to the SPADE Language Server JAR. The value must be the full path of the jar file, and can contain spaces.
@@ -55,3 +57,8 @@ Update dependencies and allow quotes around the value of the "PAGEN\_SERVER\_JAR
 ### 0.2.0
 
 Improve parsing of floating-point literals.
+
+### 0.2.1
+
+Add keywords sorted by, ascending, descending.
+Wait a couple of seconds before trying to connect to the language server.

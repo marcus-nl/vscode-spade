@@ -57,12 +57,14 @@ export function activate(context: vscode.ExtensionContext) {
             else {
                 PortFinder.getPort({ port: 9542 }, (err, port) => {
                     startServer(port);
-                    logger.info(`Connecting to SPADE Language Server on port ${port}...`)
-                    let socket = Net.connect({ port }, () => {
-                        logger.info("Connected to SPADE Language Server");
-                        resolve({ reader: socket, writer: socket });
-                    });
-                });
+                    setTimeout(() => {
+                        logger.info(`Connecting to SPADE Language Server on port ${port}...`)
+                        let socket = Net.connect({ port }, () => {
+                            logger.info("Connected to SPADE Language Server");
+                            resolve({ reader: socket, writer: socket });
+                        });
+                    }, 5000);
+            });
             }
         });
     }
@@ -96,7 +98,6 @@ export function activate(context: vscode.ExtensionContext) {
     };
 
     let disposable = client.start();
-
     context.subscriptions.push(disposable);
 }
 
