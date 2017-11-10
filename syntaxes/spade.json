@@ -115,7 +115,7 @@
                     "name": "keyword.operator.spade"
                 },
                 {
-                    "match": "\\b(Process|with subject|description|key)\\b",
+                    "match": "\\b(Process|key|description|with subject|startable by)\\b",
                     "name": "keyword.other.spade"
                 },
                 {

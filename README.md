@@ -60,5 +60,9 @@ Improve parsing of floating-point literals.
 
 ### 0.2.1
 
-Add keywords sorted by, ascending, descending.
+Add highlighting for "sorted by", "ascending", "descending".
 Wait a couple of seconds before trying to connect to the language server.
+
+### 0.2.2
+
+Add highlighting for "startable by".

@@ -63,7 +63,7 @@ export function activate(context: vscode.ExtensionContext) {
                             logger.info("Connected to SPADE Language Server");
                             resolve({ reader: socket, writer: socket });
                         });
-                    }, 5000);
+                    }, 4000);
             });
             }
         });
