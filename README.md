@@ -66,3 +66,7 @@ Wait a couple of seconds before trying to connect to the language server.
 ### 0.2.2
 
 Add highlighting for "startable by".
+
+### 0.2.3
+
+Add highlighting for "autovalue".

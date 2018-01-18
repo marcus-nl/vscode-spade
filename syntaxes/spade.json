@@ -107,16 +107,16 @@
         "keywords": {
             "patterns": [
                 {
+                    "match": "\\b(Process|key|description|with subject|startable by)\\b",
+                    "name": "keyword.other.spade"
+                },
+                {
                     "match": "\\b(For|One|Several|the|each|exists|exist|in|applies|with|numerous)\\b",
                     "name": "keyword.control.spade"
                 },
                 {
                     "match": "\\b(and|or|not|old|exists)\\b",
                     "name": "keyword.operator.spade"
-                },
-                {
-                    "match": "\\b(Process|key|description|with subject|startable by)\\b",
-                    "name": "keyword.other.spade"
                 },
                 {
                     "match": "\\b(The following)\\b",
@@ -135,7 +135,7 @@
                     "name": "keyword.other.spade"
                 },
                 {
-                    "match": "\\b(identifies|unique|required|displayed|label|group|opposite of)\\b",
+                    "match": "\\b(identifies|unique|required|displayed|label|group|opposite of|autovalue)\\b",
                     "name": "keyword.other.spade"
                 }
             ]

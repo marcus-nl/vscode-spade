@@ -2,7 +2,7 @@
   "name": "vscode-spade",
   "displayName": "SPADE Language Support",
   "description": "Support for the SPADE L4 specification language",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "publisher": "marcus-nl",
   "homepage": "https://github.com/marcus-nl/vscode-spade",
   "license": "GPL-3.0",
